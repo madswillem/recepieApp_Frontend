@@ -6,7 +6,7 @@ const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdate
             <h1 className='Header'>Hinzufügen</h1>
             <input type="text" placeholder="Name" onChange = {(e) => onUpdateName(e.target.value)}/>
             <Ingredeant data={data} onDelete={onDelete} onUpdate={onUpdate}/>
-            <textarea id="addTextarea" name="text" cols="25" rows="5" onChange = {(e) => onUpdateDescripition(e.target.value)}></textarea>
+            <textarea id="addTextarea" name="text" cols="62" rows="5" onChange = {(e) => onUpdateDescripition(e.target.value)}></textarea>
             <div>
                 <button onClick={onAdd}>Neu Zutat</button>
                 <button onClick={onFinish}>Hinzufügen</button>
