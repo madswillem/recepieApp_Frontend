@@ -55,13 +55,18 @@
   left: 1%;
 }
 
+.RecipeHeader h1 {
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
 .RecipeCard {
   border-radius: 5px;
   position: relative;
   background-color: yellow;
   width: 99%;
   height: 50px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   margin-left: 0.5%;
   cursor: pointer;
   outline: none;
