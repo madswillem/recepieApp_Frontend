@@ -8,10 +8,7 @@ const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdate
             <Ingredeant data={data} onDelete={onDelete} onUpdate={onUpdate}/>
             <textarea name="text" cols="25" rows="5" onChange = {(e) => onUpdateDescripition(e.target.value)}></textarea>
             <div>
-                <button onClick={onAdd} >
-                    Neu Zutat
-                </button>
-
+                <button onClick={onAdd}>Neu Zutat</button>
                 <button onClick={onFinish}>Hinzufügen</button>
             </div>
         </div>
