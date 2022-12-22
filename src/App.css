@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0.2;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.recipes {
+  display: inline-table;
+  border-radius: 20px;
+  position: relative;
+  min-height: 98%;
+  width: 69.5%;
+  background-color: blue;
+  overflow: auto;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.recomended {
+  border-radius: 20px;
+  position: fixed;
+  right: 0.5%;
+  bottom: 1%;
+  min-height: 47.5%;
+  width: 29.5%;
+  background-color: green;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.recomended h1 {
+  position: relative;
+  left: 1%;
+}
+
+.add {
+  border-radius: 20px;
+  position: fixed;
+  right: 1%;
+  top: 1%;
+  height: 48.5%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 29%;
+  background-color: green;
+}
+
+.add h1 {
+  position: relative;
+  left: 1%;
+}
+
+.RecipeHeader {
+  border-radius: 5px;
+  position: relative;
+  background-color: green;
+  width: 98%;
+  left: 1%;
+}
+
+.RecipeCard {
+  border-radius: 5px;
+  position: relative;
+  background-color: yellow;
+  width: 99%;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 0.5%;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  border: none;
+  font-size: large;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.active {
+  overflow: auto;
+}
+
+#ingredeant {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#name {
+  position: relative;
+  width: 74%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#amount {
+  position: relative;
+  width: 19%;
+  text-align: right;
+}
+
+#delte {
+  position: relative;
+  margin-left: 1%;
+
+}
+
+.add input {
+  margin-bottom: 5px;
+  margin-left: 5px;
 }
