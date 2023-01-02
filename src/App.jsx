@@ -35,19 +35,24 @@ function App() {
 
   useEffect(() => {
     const getRecepies = async () => {
-      const recepiesFromServer = await fetchTasks()
+      const recepiesFromServer = await initFetchTask()
       setRecepies(recepiesFromServer)
     }
 
     getRecepies();
   }, [])
 
-  const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/api/posts')
+  
+
+  const initFetchTask = async () => {
+    const res = await fetch('https://rezeptApp.madsw.repl.co/api')
     const data = await res.json();
+
+    console.log(data)
 
     return data
   }
+
   function POSTTask() {
     const options = {
       method: 'POST',
@@ -62,7 +67,7 @@ function App() {
       }
     }
 
-    fetch('http://localhost:5000/api/posts', options)
+    fetch('https://rezeptApp.madsw.repl.co/api', options)
       .then(res => res.json())
       .then(res => console.log(res));
   }

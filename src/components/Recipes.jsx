@@ -1,8 +1,6 @@
 import RecipeCard from "./RecipeCard"
 
 const Recipes = ({data}) => {
-    console.log(data)
-
     return (
         <div className='recipes'>
             <div className='RecipeHeader'>

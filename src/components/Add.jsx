@@ -5,6 +5,9 @@ const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdate
     const [textareaheight, setTextareaheight] = useState(1); 
   
     const handleChange = (event) => {    
+
+        onUpdateDescripition(event.target.value)
+
         //console.log( event.target.rows ) 
         const height = event.target.scrollHeight; 
         const rowHeight = 17; 
@@ -19,7 +22,7 @@ const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdate
     return (
         <div className='add'>
             <h1 className='Header'>Hinzufügen</h1>
-            <input type="text" placeholder="Name" onChange = {handleChange}/>
+            <input type="text" placeholder="Name" onChange = {(e) => onUpdateName(e.target.value)}/>
             <Ingredeant data={data} onDelete={onDelete} onUpdate={onUpdate}/>
             <textarea id="addTextarea" name="text" cols="63" rows={textareaheight} onChange = {(e) => handleChange(e)}></textarea>
             <div>
