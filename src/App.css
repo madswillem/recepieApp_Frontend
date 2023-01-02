@@ -1,5 +1,5 @@
 body{
-  background-color: #FFFFFF;
+  background-color: #22212f;
 }
 
 * {
@@ -18,12 +18,12 @@ body{
   overflow: auto;
   margin: auto;
   background-color: #35334a;
-  box-shadow: 5px 5px rgb(227, 227, 227);
+  box-shadow: 5px 5px #1a1924;
 }
 
 .recomended {
   border: 2px solid black;
-  box-shadow: 5px 5px rgb(227, 227, 227);
+  box-shadow: 5px 5px #1a1924;
   border-radius: 20px;
   position: fixed;
   right: 0.5%;
@@ -40,7 +40,7 @@ body{
 
 .add {
   border: 2px solid black;
-  box-shadow: 5px 5px rgb(227, 227, 227);
+  box-shadow: 5px 5px #1a1924;
   background-color: #35334a;
   border-radius: 20px;
   position: fixed;
