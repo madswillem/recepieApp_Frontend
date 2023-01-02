@@ -1,4 +1,6 @@
 const RecipeCard = ({ data }) => {
+    const click = (id) => {}
+
     return (
         <>
             {data.map((card) => <button key={card} id={card} className='RecipeCard' onClick={(e) => click(card)}>
