@@ -3,9 +3,9 @@ const RecipeCard = ({ data }) => {
 
     return (
         <>
-            {data.map((card) => <button key={card} id={card} className='RecipeCard' onClick={(e) => click(card)}>
+            {data.map((card) => <button key={card.id} id={card.id} className='RecipeCard' onClick={(e) => click(card)}>
                 <div className='container'>
-                    {card}
+                    {card.name}
                 </div>
             </button>)}
         </>
