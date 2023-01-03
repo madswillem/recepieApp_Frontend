@@ -36,6 +36,7 @@ function App() {
   useEffect(() => {
     const getRecepies = async () => {
       const recepiesFromServer = await initFetchTask()
+      console.log(recepiesFromServer)
       setRecepies(recepiesFromServer)
     }
 
@@ -45,7 +46,7 @@ function App() {
   
 
   const initFetchTask = async () => {
-    const res = await fetch('https://rezeptApp.madsw.repl.co/api')
+    const res = await fetch('http://localhost:5000/api')
     const data = await res.json();
 
     console.log(data)
@@ -67,7 +68,7 @@ function App() {
       }
     }
 
-    fetch('https://rezeptApp.madsw.repl.co/api', options)
+    fetch('http://localhost:5000/api', options)
       .then(res => res.json())
       .then(res => console.log(res));
   }

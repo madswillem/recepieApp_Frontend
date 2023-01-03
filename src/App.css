@@ -68,7 +68,7 @@ body{
   position: relative;
   background-color: #3e8594;
   width: 99%;
-  height: 50px;
+  min-height: 50px;
   margin-top: 10px;
   margin-left: 0.5%;
   margin-bottom: 10px;
@@ -78,7 +78,7 @@ body{
   border: none;
   font-size: large;
   padding: 18px;
-  overflow: hidden;
+  overflow:inherit;
 }
 
 .active {
