@@ -1,5 +1,5 @@
 import Ingredeant from "./Ingredeant"
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdateDescripition }) => {
     const [textareaheight, setTextareaheight] = useState(1); 
