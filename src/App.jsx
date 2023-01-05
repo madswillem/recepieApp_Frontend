@@ -26,6 +26,8 @@ function App() {
   const [descripition, setDescripition] = useState();
   const [recepieName, setRecepieName] = useState();
   const [recepies, setRecepies] = useState([]);
+  const [recomendations, setRecomendations] = useState([]);
+
 
   const ingredientPattern = {
     id: 1,
@@ -35,24 +37,28 @@ function App() {
 
   useEffect(() => {
     const getRecepies = async () => {
-      const recepiesFromServer = await initFetchTask()
-      console.log(recepiesFromServer)
-      setRecepies(recepiesFromServer)
+      const allRecepiesFromServer = await initFetchAllTask()
+      setRecepies(allRecepiesFromServer)
+      const recomendatedRecepiesFromServer = await initFetchRecomendationsTask()
+      setRecomendations(recomendatedRecepiesFromServer)
     }
 
     getRecepies();
   }, [])
 
-  
-
-  const initFetchTask = async () => {
+  const initFetchAllTask = async () => {
     const res = await fetch('http://localhost:5000/api')
     const data = await res.json();
 
-    console.log(data)
+    return data
+  }
+  const initFetchRecomendationsTask = async () => {
+    const res = await fetch('http://localhost:5000/api/recomendations')
+    const data = await res.json();
 
     return data
   }
+
 
   function POSTTask() {
     const options = {
@@ -73,7 +79,6 @@ function App() {
       .then(res => console.log(res));
   }
 
-
   function getID() {
     var LastItem
     var returnValue
@@ -86,8 +91,17 @@ function App() {
     return returnValue
   }
 
+  const select = (id, type) => {
+    if (type === true) {
+      fetch('http://localhost:5000/api/select/' + id)
+    } else{
+      fetch('http://localhost:5000/api/deselect/' + id)
+    }
+    
+  }
 
 
+/*Updates================================================================================================================================================== */
   const updateDescripition = (value) => {
     setDescripition(value)
   }
@@ -102,18 +116,19 @@ function App() {
     for(let i=0; i < ingredients_lenght; i++){
       if(ingredients_copy[i].id === id){
         if(name === 'ingredeant') {
+          console.log("hää")
           ingredients_copy[i].ingredient = value
         }
         if(name === 'amount') {
           ingredients_copy[i].amount = value
         }
-        ingredients_copy[i].ingredient = value
       }
     }
 
     setIngredients(ingredients_copy)
   }
 
+/*Add================================================================================================================================================== */
   const add = () => {
     console.log(recepieName, ingredients, descripition)
     POSTTask();
@@ -125,15 +140,16 @@ function App() {
     setIngredients([...ingredients, addIng])
   }
 
+/*Delete================================================================================================================================================== */
   const deleteIngredeant = (id) => {
     setIngredients(ingredients.filter((ing) => ing.id !== id))
   }
 
   return (
     <div className="App">
-      <Recipes data={recepies}/>
-      <Recomended />
-      <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updateRecepieName} onUpdateDescripition= {updateDescripition}/>
+      <Recipes data={recepies} onSelect={select}/>
+      <Recomended data={recomendations} onSelect={select}/>
+      <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updateRecepieName} onUpdateDescripition= {updateDescripition} />
     </div>
   );
 }

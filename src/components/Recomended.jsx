@@ -1,10 +1,10 @@
 import RecipeCard from "./RecipeCard"
 
-const Recomended = () => {
+const Recomended = ({ data, onSelect }) => {
     return (
         <div className='recomended'>
             <h1 className='Header'>Vorschläge</h1>
-            <RecipeCard data={window.$RecomendedRecepies}/>
+            <RecipeCard data={data} onSelect={onSelect}/>
         </div>
     )
 }
