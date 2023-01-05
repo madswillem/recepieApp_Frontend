@@ -81,6 +81,14 @@ body{
   overflow:inherit;
 }
 
+.RecipeCard li {
+  margin-left: 15px;
+}
+
+#icon {
+  float: right;
+}
+
 .active {
   overflow: auto;
 }
