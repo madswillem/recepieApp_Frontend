@@ -27,6 +27,7 @@ function App() {
   const [recepieName, setRecepieName] = useState();
   const [recepies, setRecepies] = useState([]);
   const [recomendations, setRecomendations] = useState([]);
+  const [colormode, setColormode] = useState('light');
 
 
   const ingredientPattern = {
@@ -36,6 +37,7 @@ function App() {
   }
 
   useEffect(() => {
+  
     const getRecepies = async () => {
       const allRecepiesFromServer = await initFetchAllTask()
       setRecepies(allRecepiesFromServer)
@@ -145,8 +147,22 @@ function App() {
     setIngredients(ingredients.filter((ing) => ing.id !== id))
   }
 
+//Style
+const bgstyle = () => {
+  if (colormode === 'dark') {
+    var el = document.getElementById('body');
+    el.style.backgroundColor = "#22212f";
+  }
+  if (colormode === 'light') {
+    var el = document.getElementById('body');
+    el.style.backgroundColor = "#ffffff";
+  }
+}
+
+bgstyle()
+
   return (
-    <div className="App">
+    <div className="App" id={colormode}>
       <Recipes data={recepies} onSelect={select}/>
       <Recomended data={recomendations} onSelect={select}/>
       <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updateRecepieName} onUpdateDescripition= {updateDescripition} />

@@ -1,6 +1,4 @@
-body{
-  background-color: #22212f;
-}
+
 
 * {
   box-sizing: border-box;
@@ -9,7 +7,6 @@ body{
 }
 
 .recipes {
-  border: 2px solid #454260;
   display: inline-table;
   border-radius: 20px;
   position: relative;
@@ -17,20 +14,36 @@ body{
   width: 69.5%;
   overflow: auto;
   margin: auto;
+  
+}
+#dark .recipes {
   background-color: #35334a;
   box-shadow: 5px 5px #1a1924;
+  border: 2px solid #454260;
+}
+#light .recipes {
+  background-color: #ded7fb;
+  box-shadow: 5px 5px #e0e0e2;
+  border: 2px solid #d1caec;
 }
 
 .recomended {
-  border: 2px solid #454260;
-  box-shadow: 5px 5px #1a1924;
   border-radius: 20px;
   position: fixed;
   right: 0.5%;
   bottom: 1%;
   min-height: 47.5%;
   width: 29.5%;
+}
+#dark .recomended {
   background-color: #35334a;
+  box-shadow: 5px 5px #1a1924;
+  border: 2px solid #454260;
+}
+#light .recomended {
+  background-color: #ded7fb;
+  box-shadow: 5px 5px #e0e0e2;
+  border: 2px solid #d1caec;
 }
 
 .recomended h1 {
@@ -39,9 +52,6 @@ body{
 }
 
 .add {
-  border: 2px solid #454260;
-  box-shadow: 5px 5px #1a1924;
-  background-color: #35334a;
   border-radius: 20px;
   position: fixed;
   right: 1%;
@@ -50,6 +60,16 @@ body{
   overflow-x: hidden;
   overflow-y: auto;
   width: 29%;
+}
+#dark .add {
+  background-color: #35334a;
+  box-shadow: 5px 5px #1a1924;
+  border: 2px solid #454260;
+}
+#light .add {
+  background-color: #ded7fb;
+  box-shadow: 5px 5px #e0e0e2;
+  border: 2px solid #d1caec;
 }
 
 .add h1 {
@@ -60,13 +80,17 @@ body{
 .Header {
   margin-bottom: 5px;
   margin-left: 5px;
+}
+#dark .Header {
   color: #FFFFFF;
+}
+#light .Header {
+  color: #000000;
 }
 
 .RecipeCard {
   border-radius: 5px;
   position: relative;
-  background-color: #3e8594;
   width: 99%;
   min-height: 50px;
   margin-top: 10px;
@@ -79,6 +103,12 @@ body{
   font-size: large;
   padding: 18px;
   overflow:inherit;
+}
+#dark .RecipeCard{
+  background-color: #3e8594;
+}
+#light .RecipeCard{
+  background-color: #c7defa;
 }
 
 .RecipeCard li {
@@ -117,19 +147,30 @@ body{
 .add input {
   margin-bottom: 5px;
   margin-left: 5px;
-  background-color: #3d3c57;
   border: none;
+}
+#dark .add input{
+  background-color: #3d3c57;
   color: #FFFFFF;
+}
+#light .add input{
+  background-color: #c9c2e4;
+  color: #000000;
 }
 
 .add button {
   margin-bottom: 5px;
   margin-left: 5px;
-  background-color: #3e8594;
   border-radius: 5px;
   border: none;
   height: 30px;
   width: 109px;
+}
+#dark .add button{
+  background-color: #3e8594;;
+}
+#light .add button{
+  background-color: #c7defa;
 }
 
 .add textarea {
@@ -139,6 +180,14 @@ body{
   border: none;
   color: #FFFFFF;
 }
+#dark .add textarea{
+  background-color: #3d3c57;
+  color: #FFFFFF;
+}
+#light .add textarea{
+  background-color: #c9c2e4;
+  color: #000000;
+}
 
 .add button:hover {
   border: 3px solid lightskyblue;
@@ -147,4 +196,32 @@ body{
 #addTextarea{
   margin-bottom: 5px;
   margin-left: 5px;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  .recipes.dark-scheme {
+    background-color: #35334a;
+    box-shadow: 5px 5px #1a1924;
+    border: 2px solid #454260;
+  }
+  .recomended.dark-scheme {
+    background-color: #35334a;
+    box-shadow: 5px 5px #1a1924;
+    border: 2px solid #454260;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .recipes.light-scheme {
+    background-color: #ded7fb;
+    box-shadow: 5px 5px #e0e0e2;
+    border: 2px solid #d1caec;
+  }
+  .recomended.light-scheme {
+    background-color: #ded7fb;
+    box-shadow: 5px 5px #e0e0e2;
+    border: 2px solid #d1caec;
+  }
 }
