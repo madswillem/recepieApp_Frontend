@@ -109,7 +109,7 @@ function App() {
   }
   const updateRecepieName = async (value) => {
     setRecepieName(value);
-  }
+  } 
 
   const update = (id, value, name) => {
     var ingredients_copy = ingredients;
