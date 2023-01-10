@@ -24,8 +24,8 @@ function App() {
   ])
 
   const [descripition, setDescripition] = useState();
-  const [recepieName, setRecepieName] = useState();
-  const [recepies, setRecepies] = useState([]);
+  const [recipeName, setrecipeName] = useState();
+  const [recipes, setrecipes] = useState([]);
   const [recomendations, setRecomendations] = useState([]);
   const [colormode, setColormode] = useState('light');
 
@@ -38,14 +38,14 @@ function App() {
 
   useEffect(() => {
   
-    const getRecepies = async () => {
-      const allRecepiesFromServer = await initFetchAllTask()
-      setRecepies(allRecepiesFromServer)
-      const recomendatedRecepiesFromServer = await initFetchRecomendationsTask()
-      setRecomendations(recomendatedRecepiesFromServer)
+    const getrecipes = async () => {
+      const allrecipesFromServer = await initFetchAllTask()
+      setrecipes(allrecipesFromServer)
+      const recomendatedrecipesFromServer = await initFetchRecomendationsTask()
+      setRecomendations(recomendatedrecipesFromServer)
     }
 
-    getRecepies();
+    getrecipes();
   }, [])
 
   const initFetchAllTask = async () => {
@@ -68,8 +68,8 @@ function App() {
       body: JSON.stringify({
         ingredeants: ingredients,
         preparation: descripition,
-        title: recepieName,
-        type: 'recepie'
+        title: recipeName,
+        type: 'recipe'
       }),
       headers: {
           'Content-Type': 'application/json'
@@ -107,8 +107,8 @@ function App() {
   const updateDescripition = (value) => {
     setDescripition(value)
   }
-  const updateRecepieName = async (value) => {
-    setRecepieName(value);
+  const updaterecipeName = async (value) => {
+    setrecipeName(value);
   } 
 
   const update = (id, value, name) => {
@@ -132,7 +132,7 @@ function App() {
 
 /*Add================================================================================================================================================== */
   const add = () => {
-    console.log(recepieName, ingredients, descripition)
+    console.log(recipeName, ingredients, descripition)
     POSTTask();
   }
 
@@ -163,9 +163,9 @@ bgstyle()
 
   return (
     <div className="App" id={colormode}>
-      <Recipes data={recepies} onSelect={select}/>
+      <Recipes data={recipes} onSelect={select}/>
       <Recomended data={recomendations} onSelect={select}/>
-      <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updateRecepieName} onUpdateDescripition= {updateDescripition} />
+      <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updaterecipeName} onUpdateDescripition= {updateDescripition} />
     </div>
   );
 }
