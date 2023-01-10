@@ -1,7 +1,7 @@
 import './App.css';
 import Recipes from './components/Recipes'
 import Add from './components/Add'
-import Recomended from './components/Recomended'
+import Recomend from './components/Recomended'
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
   const [descripition, setDescripition] = useState();
   const [recipeName, setrecipeName] = useState();
   const [recipes, setrecipes] = useState([]);
-  const [recomendations, setRecomendations] = useState([]);
+  const [recommendations, setrecommendations] = useState([]);
   const [colormode, setColormode] = useState('light');
 
 
@@ -41,8 +41,8 @@ function App() {
     const getrecipes = async () => {
       const allrecipesFromServer = await initFetchAllTask()
       setrecipes(allrecipesFromServer)
-      const recomendatedrecipesFromServer = await initFetchRecomendationsTask()
-      setRecomendations(recomendatedrecipesFromServer)
+      const recommendatedrecipesFromServer = await initFetchrecommendationsTask()
+      setrecommendations(recommendatedrecipesFromServer)
     }
 
     getrecipes();
@@ -54,8 +54,8 @@ function App() {
 
     return data
   }
-  const initFetchRecomendationsTask = async () => {
-    const res = await fetch('http://localhost:5000/api/recomendations')
+  const initFetchrecommendationsTask = async () => {
+    const res = await fetch('http://localhost:5000/api/recommendations')
     const data = await res.json();
 
     return data
@@ -164,7 +164,7 @@ bgstyle()
   return (
     <div className="App" id={colormode}>
       <Recipes data={recipes} onSelect={select}/>
-      <Recomended data={recomendations} onSelect={select}/>
+      <Recomend data={recommendations} onSelect={select}/>
       <Add data={ingredients} onDelete={deleteingredient} onAdd={addingredient} onFinish={add} onUpdate={update} onUpdateName={updaterecipeName} onUpdateDescripition= {updateDescripition} />
     </div>
   );

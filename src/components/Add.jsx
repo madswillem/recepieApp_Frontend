@@ -1,4 +1,4 @@
-import ingredient from "./ingredient"
+
 import { useState } from 'react'
 
 const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdateDescripition }) => {

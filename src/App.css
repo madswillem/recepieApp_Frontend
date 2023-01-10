@@ -27,7 +27,7 @@
   border: 2px solid #d1caec;
 }
 
-.recomended {
+.recommended {
   border-radius: 20px;
   position: fixed;
   right: 0.5%;
@@ -35,18 +35,18 @@
   min-height: 47.5%;
   width: 29.5%;
 }
-#dark .recomended {
+#dark .recommended {
   background-color: #35334a;
   box-shadow: 5px 5px #1a1924;
   border: 2px solid #454260;
 }
-#light .recomended {
+#light .recommended {
   background-color: #ded7fb;
   box-shadow: 5px 5px #e0e0e2;
   border: 2px solid #d1caec;
 }
 
-.recomended h1 {
+.recommended h1 {
   position: relative;
   left: 1%;
 }
@@ -206,7 +206,7 @@
     box-shadow: 5px 5px #1a1924;
     border: 2px solid #454260;
   }
-  .recomended.dark-scheme {
+  .recommended.dark-scheme {
     background-color: #35334a;
     box-shadow: 5px 5px #1a1924;
     border: 2px solid #454260;
@@ -219,7 +219,7 @@
     box-shadow: 5px 5px #e0e0e2;
     border: 2px solid #d1caec;
   }
-  .recomended.light-scheme {
+  .recommended.light-scheme {
     background-color: #ded7fb;
     box-shadow: 5px 5px #e0e0e2;
     border: 2px solid #d1caec;

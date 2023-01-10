@@ -1,12 +1,12 @@
 import RecipeCard from "./RecipeCard"
 
-const Recomended = ({ data, onSelect }) => {
+const recommended = ({ data, onSelect }) => {
     return (
-        <div className='recomended'>
+        <div className='recommended'>
             <h1 className='Header'>Vorschläge</h1>
             <RecipeCard data={data} onSelect={onSelect}/>
         </div>
     )
 }
 
-export default Recomended
+export default recommended
