@@ -21,7 +21,7 @@ const RecipeCard = ({ data, onSelect }) => {
             return(
                 <div>
                     <ul>
-                        {card.ingredeants.map((i) => <li key={i.id}> <span>{i.amount}</span>  <span>{i.ingredient}</span></li>)}
+                        {card.ingredients.map((i) => <li key={i.id}> <span>{i.amount}</span>  <span>{i.ingredient}</span></li>)}
                     </ul>
                     <p>
                         {card.preparation}

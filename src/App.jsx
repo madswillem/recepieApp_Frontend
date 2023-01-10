@@ -66,7 +66,7 @@ function App() {
     const options = {
       method: 'POST',
       body: JSON.stringify({
-        ingredeants: ingredients,
+        ingredients: ingredients,
         preparation: descripition,
         title: recipeName,
         type: 'recipe'
@@ -117,7 +117,7 @@ function App() {
 
     for(let i=0; i < ingredients_lenght; i++){
       if(ingredients_copy[i].id === id){
-        if(name === 'ingredeant') {
+        if(name === 'ingredient') {
           console.log("hää")
           ingredients_copy[i].ingredient = value
         }
@@ -136,14 +136,14 @@ function App() {
     POSTTask();
   }
 
-  const addIngredeant = () => {
+  const addingredient = () => {
     var addIng = ingredientPattern
     addIng.id = getID()
     setIngredients([...ingredients, addIng])
   }
 
 /*Delete================================================================================================================================================== */
-  const deleteIngredeant = (id) => {
+  const deleteingredient = (id) => {
     setIngredients(ingredients.filter((ing) => ing.id !== id))
   }
 
@@ -165,7 +165,7 @@ bgstyle()
     <div className="App" id={colormode}>
       <Recipes data={recipes} onSelect={select}/>
       <Recomended data={recomendations} onSelect={select}/>
-      <Add data={ingredients} onDelete={deleteIngredeant} onAdd={addIngredeant} onFinish={add} onUpdate={update} onUpdateName={updaterecipeName} onUpdateDescripition= {updateDescripition} />
+      <Add data={ingredients} onDelete={deleteingredient} onAdd={addingredient} onFinish={add} onUpdate={update} onUpdateName={updaterecipeName} onUpdateDescripition= {updateDescripition} />
     </div>
   );
 }

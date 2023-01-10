@@ -1,4 +1,4 @@
-import Ingredeant from "./Ingredeant"
+import ingredient from "./ingredient"
 import { useState } from 'react'
 
 const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdateDescripition }) => {
@@ -23,7 +23,7 @@ const Add = ({ data, onDelete, onAdd, onFinish, onUpdate, onUpdateName, onUpdate
         <div className='add'>
             <h1 className='Header'>Hinzufügen</h1>
             <input type="text" placeholder="Name" onChange = {(e) => onUpdateName(e.target.value)}/>
-            <Ingredeant data={data} onDelete={onDelete} onUpdate={onUpdate}/>
+            <ingredient data={data} onDelete={onDelete} onUpdate={onUpdate}/>
             <textarea id="addTextarea" name="text" cols="63" rows={textareaheight} onChange = {(e) => handleChange(e)}></textarea>
             <div>
                 <button onClick={onAdd}>Neu Zutat</button>
