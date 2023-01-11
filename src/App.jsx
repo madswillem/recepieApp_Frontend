@@ -55,7 +55,7 @@ function App() {
     return data
   }
   const initFetchrecommendationsTask = async () => {
-    const res = await fetch('http://localhost:5000/api/recommendations')
+    const res = await fetch('http://localhost:5000/api/recomendations')
     const data = await res.json();
 
     return data
