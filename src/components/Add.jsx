@@ -1,4 +1,4 @@
-import Ingredient from './Ingredeant'
+import Ingredient from './Ingredient'
 
 import { useState } from 'react'
 
